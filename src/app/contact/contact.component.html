@@ -1,0 +1,35 @@
+<div class="description">
+    <div class="title" [class.is-mobile]="mobileQuery.matches">Contact</div>
+    <div class="contact-details" [class.is-mobile]="mobileQuery.matches">
+        <mat-icon style="vertical-align: bottom;">mail</mat-icon>&nbsp;sanaburney.sb@gmail.com
+        <br/><br/>
+        <mat-icon style="vertical-align: bottom;">facebook</mat-icon>&nbsp;/SanaBurneyInnovativeArts
+        <br/><br/>
+        <img src="../../assets/icons8-instagram.png">&nbsp;/innovativearts_sanaburney
+    </div>
+</div>
+<form class="contact" [class.is-mobile]="mobileQuery.matches" [formGroup]="form" method="post" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+        <mat-label>Full Name</mat-label>
+        <input matInput [formControl]="name" required>
+        <mat-error *ngIf="name.invalid">Please enter your name</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput [formControl]="email" class="placeholder" placeholder="email@example.com" required>
+        <mat-error *ngIf="email.invalid">Please enter a valid email</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Message</mat-label>
+        <textarea matInput class="message" [formControl]="message" maxlength="256" placeholder="I'm interested in..." required></textarea>
+        <mat-hint align="end">
+            <font color="whitesmoke"> {{message.value?.length || 0}}/256</font>
+        </mat-hint>
+        <mat-error *ngIf="message.invalid">Please enter a message</mat-error>
+    </mat-form-field>
+    <button mat-raised-button [disabled]="isLoading" class="submit" type="submit">Submit</button>
+    <input [formControl]="honeypot" class="hoeypt" type="text" />
+    <div [ngClass]="!submitted? 'hidden' : 'visible'" class="center-text">
+        <span>{{responseMessage}}</span>
+    </div>
+</form>

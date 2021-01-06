@@ -1,0 +1,58 @@
+.about {
+    display: flex;
+}
+
+.about-item1 {
+    color: #492AD4;
+    margin-top: 5vh;
+    padding-bottom: 10vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    text-align: justify;
+}
+
+.about-item2 {
+    object-fit: cover;
+    width: 50vw;
+}
+
+.title-content {
+    font-size: 3.5rem;
+    text-align: left;
+    padding-bottom: 3vh;
+}
+
+.content {
+    font-size: 1.25rem;
+    overflow-wrap: break-word;
+    line-height: 3vh;
+}
+
+.is-mobile .content {
+    line-height: max(2.75vh, 15px);
+    font-size: 1rem;
+    overflow-wrap: break-word;
+}
+
+.is-mobile .title-content {
+    font-size: 1rem;
+    font-weight: bold;
+    padding-bottom: 3vh;
+}
+
+.is-mobile .about {
+    display: flex;
+}
+
+.is-mobile .about-item1 {
+    color: #492AD4;
+    margin-top: 2vh;
+    padding-bottom: 5vh;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    text-align: justify;
+}
+
+.is-mobile .about-item2 {
+    display: none;
+}
