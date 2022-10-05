@@ -23,9 +23,9 @@
 }
 
 .content {
-    font-size: 1.10rem;
+    font-size: 1.5rem;
     overflow-wrap: break-word;
-    line-height: 2.5vh;
+    line-height: 2.8vh;
 }
 
 .is-mobile .content {
