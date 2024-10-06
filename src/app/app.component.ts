@@ -11,7 +11,7 @@ export class AppComponent implements OnInit, OnDestroy{
 
   mobileQuery: MediaQueryList;
 
-  private _mobileQueryListener: () => void;       
+  private _mobileQueryListener: () => void;
 
   config: any;
   fullpage_api: any;
@@ -25,12 +25,12 @@ export class AppComponent implements OnInit, OnDestroy{
 
       // fullpage options
       licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-      sectionsColor: ['#492AD4', 'whitesmoke', '#492AD4', 'whitesmoke','#492AD4'],
-      anchors: ['introduction', 'about', 'works', 'experience','contact'],
+      sectionsColor: ['#492AD4', 'whitesmoke', '#492AD4', 'whitesmoke', '#492AD4', 'whitesmoke'],
+      anchors: ['introduction', 'about', 'works', 'experience', 'research', 'contact'],
       css3: true,
       // fullpage callbacks
       afterResize: () => {
-        console.log("After resize");
+        console.log('After resize');
       },
       afterLoad: (origin: any, destination: any, direction:any) => {
         console.log(origin.index, origin, destination);
@@ -47,7 +47,7 @@ export class AppComponent implements OnInit, OnDestroy{
   }
 
   ngOnDestroy(): void {
-   
+
   }
 
 }

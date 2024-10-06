@@ -60,10 +60,11 @@ import {OverlayModule} from '@angular/cdk/overlay';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { AboutComponent } from './about/about.component';
 import { WorksComponent } from './works/works.component';
+import { ResearchComponent } from './research/research.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
 import { ExperienceComponent } from './experience/experience.component';
 import { DialogContentForAcademia } from './experience/experience.component';
 import { DialogContentForExhibitions } from './experience/experience.component';
@@ -78,6 +79,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     IntroductionComponent,
     AboutComponent,
     WorksComponent,
+    ResearchComponent,
     ContactComponent,
     ExperienceComponent,
     DialogContentForAcademia,

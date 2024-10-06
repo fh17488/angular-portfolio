@@ -9,6 +9,7 @@
             <a href="#about" mat-button>About</a>
             <a href="#works" mat-button>Works</a>
             <a href="#experience" mat-button>Experience</a>
+            <a href="#research" mat-button>Research</a>
         </div>
 
         <div fxShow="true" fxHide.gt-sm="true">
@@ -23,7 +24,8 @@
                 <a href="#about" mat-button>About</a>
                 <a href="#works" mat-button>Works</a>
                 <a href="#experience" mat-button>Experience</a>
-                <a (click)="sidenav.toggle()" href="#" mat-button>Close</a>
+                <a href="#research" mat-button>Research</a>
+              <a (click)="sidenav.toggle()" href="#" mat-button>Close</a>
             </div>
         </mat-sidenav>
         <mat-sidenav-content fxFlexFill class="content">
@@ -34,8 +36,8 @@
                     <app-about class="section">
                     </app-about>
                     <app-works class="section"></app-works>
-                    <app-experience class="section">
-                    </app-experience>
+                    <app-experience class="section"></app-experience>
+                    <app-research class="section"></app-research>
                 </div>
             </div>
         </mat-sidenav-content>

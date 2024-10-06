@@ -1,0 +1,57 @@
+@media screen and (orientation:portrait),
+screen and (min-width:800px) and (orientation:landscape) {
+    .mat-card {
+        margin-top: 3.5vh;
+        padding-bottom: 3vh;
+    }
+    .is-mobile.mat-card {
+        margin-top: 0;
+        padding-bottom: 0;
+        max-width: 65vw;
+    }
+    .carousel {
+        margin: auto;
+        margin-top: 5vh;
+        min-height: min(95vh, 800px);
+        width: 90vw;
+    }
+    .carousel-cell {
+        margin-left: 5vw;
+        width: 22vw;
+        max-width: 350px;
+    }
+    .is-mobile.carousel {
+        margin-top: 0vh;
+        margin-left: 10vw;
+        min-height: 85vh;
+        max-width: 80vw;
+    }
+    .is-mobile.carousel-cell {
+        width: 10vw;
+        margin-left: 4vw;
+        max-height: 85vh;
+    }
+}
+
+@media screen and (min-width:320px) and (max-width:800px) and (orientation:landscape) {
+    .is-mobile.mat-card {
+        margin-top: 3.5vh;
+        padding-bottom: 3vh;
+        max-width: 65vh;
+    }
+    .carousel {
+        margin-top: 3.5vw;
+        margin-left: 10vw;
+        min-height: min(95vw, 800px);
+        width: 100vh;
+    }
+    .is-mobile.carousel {
+        position: absolute;
+        top: 95vh;
+        left: -25vw;
+        transform: rotateZ(-90deg);
+        margin-left: calc((100vw - 300px)/2);
+        max-width: 85vh;
+        min-height: 75vw;
+    }
+}

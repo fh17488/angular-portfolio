@@ -1,0 +1,27 @@
+<carousel [class.is-mobile]="mobileQuery.matches" [dots]="mobileQuery.matches ? false : true" [cellsToShow]="mobileQuery.matches ? 1 : 3" class="carousel">
+  <div class="carousel-cell">
+    <mat-card [class.is-mobile]="mobileQuery.matches">
+      <mat-card-title>Exhibition Review</mat-card-title>
+      <mat-card-subtitle>Rejecting Binaries: Imagining a different present and future
+        By Sana Burney</mat-card-subtitle>
+      <img src="../assets/exhibition_review_thumbnail.png">
+      <mat-card-content>
+        <p style="text-align: justify; ">
+          <a href="../assets/contextual_report.pdf">Download</a> to read the full review.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="carousel-cell">
+    <mat-card [class.is-mobile]="mobileQuery.matches">
+      <mat-card-title>MA Fine Art Contextual Report</mat-card-title>
+      <mat-card-subtitle>Through an Artist's Lens</mat-card-subtitle>
+      <img src="../assets/contextual_report_thumbnail.png">
+      <mat-card-content>
+        <p style="text-align: justify; ">
+          <a href="../assets/contextual_report.pdf">Download</a> to read the full report.
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</carousel>
