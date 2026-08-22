@@ -1,21 +1,31 @@
-export type WorkCategory = 'printmaking' | 'photography' | 'public-art';
+export type WorkCategory = 'printmaking' | 'photography' | 'public-art' | 'film';
 
 export interface Work {
   title: string;
   medium: string;
   image: string;
+  video?: string;
   description: string;
   category: WorkCategory;
 }
 
 export const CATEGORIES: { id: 'all' | WorkCategory; label: string }[] = [
   { id: 'all', label: 'All' },
+  { id: 'film', label: 'Film' },
   { id: 'printmaking', label: 'Print' },
   { id: 'photography', label: 'Photography' },
   { id: 'public-art', label: 'Public art' },
 ];
 
 export const WORKS: Work[] = [
+  {
+    title: 'MA Fine Art Exhibition',
+    medium: 'University of Lancashire, 2021',
+    image: 'assets/ma-fine-art-exhibition.jpg',
+    video: 'assets/ma-fine-art-exhibition.mp4',
+    category: 'film',
+    description: 'Walkthrough of the MA Fine Art exhibition.',
+  },
   {
     title: 'The miracle cream',
     medium: 'Intaglio type etching on Somerset',

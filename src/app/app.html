@@ -61,7 +61,12 @@
     <div class="gallery">
       @for (work of filteredWorks(); track work.image) {
         <button class="tile" type="button" (click)="openWork(work)">
-          <img [src]="work.image" [alt]="work.title" loading="lazy" />
+          <span class="tile-media">
+            <img [src]="work.image" [alt]="work.title" loading="lazy" />
+            @if (work.video) {
+              <span class="play-badge" aria-hidden="true">Play</span>
+            }
+          </span>
           <span class="tile-meta">
             <span class="tile-title">{{ work.title }}</span>
             <span class="tile-medium">{{ work.medium }}</span>
@@ -173,7 +178,11 @@
       ‹
     </button>
     <figure (click)="$event.stopPropagation()">
-      <img [src]="work.image" [alt]="work.title" />
+      @if (work.video) {
+        <video [src]="work.video" [poster]="work.image" controls playsinline autoplay></video>
+      } @else {
+        <img [src]="work.image" [alt]="work.title" />
+      }
       <figcaption>
         <h3>{{ work.title }}</h3>
         <p class="tile-medium">{{ work.medium }}</p>
