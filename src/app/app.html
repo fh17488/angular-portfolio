@@ -1,0 +1,187 @@
+<a class="skip" href="#work">Skip to work</a>
+
+<header class="nav" [class.nav-solid]="scrolled() || menuOpen()">
+  <a class="nav-mark" href="#top" (click)="closeMenu()">Sana Burney</a>
+  <nav class="nav-links" [class.open]="menuOpen()" aria-label="Primary">
+    <a href="#work" (click)="closeMenu()">Work</a>
+    <a href="#about" (click)="closeMenu()">About</a>
+    <a href="#experience" (click)="closeMenu()">Experience</a>
+    <a href="#research" (click)="closeMenu()">Research</a>
+    <a href="#contact" (click)="closeMenu()">Contact</a>
+  </nav>
+  <button
+    class="nav-toggle"
+    type="button"
+    [attr.aria-expanded]="menuOpen()"
+    aria-label="Menu"
+    (click)="toggleMenu()"
+  >
+    <span [class.open]="menuOpen()"></span>
+  </button>
+</header>
+
+<main id="top">
+  <section class="hero" aria-label="Introduction">
+    <img
+      class="hero-image"
+      src="assets/intro-bg.jpg"
+      alt="Mirrored photographic composition of clocks by Sana Burney"
+    />
+    <div class="hero-veil"></div>
+    <div class="hero-copy">
+      <p class="kicker">Visual artist &amp; educator · Lancashire, UK</p>
+      <h1>Sana <em>Burney</em></h1>
+      <p class="lede">
+        Collage, printmaking, photography and public work that hold colonial histories,
+        identity, and the question of belonging up to the light.
+      </p>
+      <a class="text-link light" href="#work">View selected work</a>
+    </div>
+  </section>
+
+  <section id="work" class="section">
+    <div class="section-head">
+      <p class="kicker">Portfolio</p>
+      <h2>Selected work</h2>
+      <div class="filters" role="tablist" aria-label="Filter works">
+        @for (cat of categories; track cat.id) {
+          <button
+            type="button"
+            role="tab"
+            [class.active]="filter() === cat.id"
+            [attr.aria-selected]="filter() === cat.id"
+            (click)="setFilter(cat.id)"
+          >
+            {{ cat.label }}
+          </button>
+        }
+      </div>
+    </div>
+
+    <div class="gallery">
+      @for (work of filteredWorks(); track work.image) {
+        <button class="tile" type="button" (click)="openWork(work)">
+          <img [src]="work.image" [alt]="work.title" loading="lazy" />
+          <span class="tile-meta">
+            <span class="tile-title">{{ work.title }}</span>
+            <span class="tile-medium">{{ work.medium }}</span>
+          </span>
+        </button>
+      }
+    </div>
+  </section>
+
+  <section id="about" class="section about">
+    <div class="about-grid">
+      <div class="about-copy">
+        <p class="kicker">Biography</p>
+        <h2>My story</h2>
+        <p>
+          Sana Burney is a master’s in Fine Art from UCLan — University of Central Lancashire, UK.
+          She has taught for over 12 years and has been on the faculty of the Indus Valley School
+          of Art &amp; Architecture. Burney has presented research on art and design in Turkey,
+          the USA and Pakistan, and has completed large-scale public art projects in Karachi and
+          Larkana, including Karachi’s FTC Bridge Beautification.
+        </p>
+        <p>
+          In 2021 she participated in Jade Montserrat’s mural project at UCLan, Preston. Her
+          practice revolves around colonialism, post-colonial societies, racialized inequality,
+          belonging and not belonging, capitalism, and feminism. Hybrid identities and identity
+          crises sit at the centre of the work, alongside sociology and psychoanalytic
+          perspectives.
+        </p>
+        <p>
+          The practice originates in twentieth-century modern collage and moves through
+          assemblage, found objects and contemporary experiment, including traditional
+          printmaking taken into new methods.
+        </p>
+      </div>
+      <figure class="about-figure">
+        <img src="assets/about-bg.jpg" alt="Atmospheric photographic still from Sana Burney’s practice" />
+      </figure>
+    </div>
+  </section>
+
+  <section id="experience" class="section experience">
+    <div class="section-head">
+      <p class="kicker">Curriculum</p>
+      <h2>Experience</h2>
+      <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Download CV</a>
+    </div>
+    <div class="exp-grid">
+      @for (group of experience; track group.title) {
+        <article>
+          <p class="kicker">{{ group.kicker }}</p>
+          <h3>{{ group.title }}</h3>
+          <ol>
+            @for (entry of group.entries; track entry.period + entry.text) {
+              <li>
+                <time>{{ entry.period }}</time>
+                <p>{{ entry.text }}</p>
+              </li>
+            }
+          </ol>
+        </article>
+      }
+    </div>
+  </section>
+
+  <section id="research" class="section">
+    <div class="section-head">
+      <p class="kicker">Writing</p>
+      <h2>Research</h2>
+    </div>
+    <div class="research-list">
+      @for (item of research; track item.title) {
+        <a class="research-card" [href]="item.href" target="_blank" rel="noopener">
+          <img [src]="item.image" [alt]="item.title" />
+          <div>
+            <p class="kicker">PDF</p>
+            <h3>{{ item.title }}</h3>
+            <p class="research-sub">{{ item.subtitle }}</p>
+            <p>{{ item.blurb }}</p>
+          </div>
+        </a>
+      }
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <p class="kicker">Studio</p>
+    <h2>Get in touch</h2>
+    <p class="lede">
+      For commissions, teaching, exhibitions or studio visits.
+    </p>
+    <a class="email" href="mailto:sanaburney.sb@gmail.com">sanaburney.sb@gmail.com</a>
+    <div class="socials">
+      <a href="https://www.instagram.com/innovativearts_sanaburney" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.sanaburney.com" target="_blank" rel="noopener">sanaburney.com</a>
+    </div>
+    <p class="place">Preston, Lancashire, UK</p>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <span>© {{ year }} Sana Burney</span>
+  <a href="#top">Back to top</a>
+</footer>
+
+@if (selected(); as work) {
+  <div class="lightbox" role="dialog" aria-modal="true" [attr.aria-label]="work.title" (click)="closeWork()">
+    <button class="lb-close" type="button" aria-label="Close" (click)="closeWork()">Close</button>
+    <button class="lb-nav prev" type="button" aria-label="Previous" (click)="$event.stopPropagation(); prevWork()">
+      ‹
+    </button>
+    <figure (click)="$event.stopPropagation()">
+      <img [src]="work.image" [alt]="work.title" />
+      <figcaption>
+        <h3>{{ work.title }}</h3>
+        <p class="tile-medium">{{ work.medium }}</p>
+        <p>{{ work.description }}</p>
+      </figcaption>
+    </figure>
+    <button class="lb-nav next" type="button" aria-label="Next" (click)="$event.stopPropagation(); nextWork()">
+      ›
+    </button>
+  </div>
+}
