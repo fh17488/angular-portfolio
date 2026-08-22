@@ -15,7 +15,7 @@ export const EXPERIENCE: ExperienceGroup[] = [
     kicker: 'Teaching',
     entries: [
       {
-        period: 'Jan 2009 – 2021',
+        period: 'Jan 2009 – 2023',
         text: 'Assistant Professor, Indus Valley School of Art and Architecture, Karachi. Taught, designed course outlines and led the Basic Design course, including academic coordination and mentoring.',
       },
       {
